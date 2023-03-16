@@ -1,13 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-import HeaderBanner from './HeaderBanner';
-import Footer from './Footer';
+import Checkbox from "./Components/Checkbox";
+import Features from "./Components/Features";
 
 function App() {
   return (
     <div className="App">
-      <HeaderBanner/>
-      <Footer/>
+      <Checkbox />
+      <Features />
     </div>
   );
 }

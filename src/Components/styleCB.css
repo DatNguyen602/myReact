@@ -1,0 +1,27 @@
+.center{
+  display: flex;
+  justify-content: center;
+  margin: 32px;
+}
+.box {
+  width: 120px;
+  height: 55px;
+  background-color: #ccc;
+  border: 0px;
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.chil {
+  content: "";
+  display: block;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #fff;
+  z-index: 1;
+  position: absolute;
+  left: 5px;
+  transition: 0.5s;
+}
