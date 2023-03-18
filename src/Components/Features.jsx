@@ -14,11 +14,11 @@ const Features = () => {
           </p>
         </div>
         {dataTest.map((it, id) => {
-          console.log(it.img);
+          // console.log(it.img);
           return (
             <div class="list">
               <img src={it.img} alt="Anh" />
-              <span class={it.color}>
+              <span class={it.color} >
                 <h1>{it.h1}</h1>
                 <p>{it.content}</p>
                 <a href={it.link}>
