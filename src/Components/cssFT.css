@@ -1,10 +1,9 @@
 .feature {
-  padding: 0 200px;
-  font-family: "Helvetica";
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  padding: 0 200px;
 }
 
 .title {
@@ -72,4 +71,33 @@
 
 .ColorEAF5FB {
   background-color: #eaf5fb !important;
+}
+
+@media screen and (max-width: 950px) and (min-width: 650px) {
+  .feature {
+    padding: 0 50px !important;
+  }
+  .list > img {
+    width: 150px;
+  }
+  .list > span {
+    padding-left: 80px;
+    padding-right: 16px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .feature {
+    padding: 0 16px !important;
+  }
+  .list {
+    width: 450px !important;
+  }
+  .list > img {
+    width: 120px;
+  }
+  .list > span {
+    padding-left: 70px;
+    padding-right: 16px;
+  }
 }
