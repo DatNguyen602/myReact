@@ -10,7 +10,7 @@ const Text = () => {
     settoggle(!toggle);
   };
   const handleUp = () => {
-    setCount((count) => ++count);
+    setCount(count + 1);
   };
 
   const Text = () => {
@@ -19,13 +19,9 @@ const Text = () => {
       return () => {
         console.log("Unmount Text");
       };
-    }, [count]);
-
-    // useEffect(() => {
-    //   console.log("ReRender");
-    // });
-
-    return <h1>Hello World! {count}</h1>;
+    }, [toggle]);
+    
+    return <h1>Hello World!</h1>;
   };
 
   return (
@@ -33,8 +29,11 @@ const Text = () => {
       <button className="toggle" onClick={handleClick}>
         Click Me
       </button>
-      {toggle && <Text />}
-      <br/><button onClick={handleUp}>Up Count</button>
+      {toggle && <Text/>}
+      <br />
+      <button onClick={handleUp}>Up Count</button>
+      <p>{count}</p>
+      <p>{toggle ? "true" : "false"}</p>
     </div>
   );
 };
