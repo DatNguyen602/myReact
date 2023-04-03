@@ -13,13 +13,14 @@ const Text = () => {
     setCount(count + 1);
   };
 
-  const Text = () => {
-    useEffect(() => {
-      console.log("Use State");
-      return () => {
-        console.log("Unmount Text");
-      };
-    }, [toggle]);
+  useEffect(() => {
+    console.log("Use State");
+    return () => {
+      console.log("Unmount Text");
+    };
+  }, [toggle]);
+
+  const Test = () => {
     
     return <h1>Hello World!</h1>;
   };
@@ -29,11 +30,11 @@ const Text = () => {
       <button className="toggle" onClick={handleClick}>
         Click Me
       </button>
-      {toggle && <Text/>}
+      {toggle && <Test/>}
       <br />
       <button onClick={handleUp}>Up Count</button>
       <p>{count}</p>
-      <p>{toggle ? "true" : "false"}</p>
+      
     </div>
   );
 };
