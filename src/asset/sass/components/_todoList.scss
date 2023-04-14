@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.set-backG{
+    width: 100%;
+    min-height: 100vh;
+    padding: 64px 0;
+    background: linear-gradient(to right, #28ee53 , #6474ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dp-none{
+    display: none;
+}
+.ColorOfUpdate{
+    background: linear-gradient(to right,#149fff,#117bff) !important;
+}
+.BorderOfUpdate{
+    border: 2px solid #149fff !important;
+}
+
+.container{
+    width: 650px;
+    min-height: 80vh;
+    background-color: #111;
+    border-radius: 8px;
+    padding-bottom: 32px;
+    h1{
+        color: #eee;
+        margin: 32px 0;
+    }
+    .btnIn{
+        position: relative;
+        width: 450px;
+        margin: 0 auto 32px;
+        input[type=text]{
+            width: 350px;
+            color: #fff;
+            padding: 16px 32px;
+            display: block;
+            box-sizing: border-box;
+            outline: none;
+            border: 2px solid #6474ff;
+            background-color: rgba(0,0,0,0.1);
+            border-radius: 5px 0 0 5px;
+        }
+        button{
+            color: #fff;
+            width: 100px;
+            border: none;
+            height: 51px;
+            border-radius: 0px 5px 5px 0px;
+            background: linear-gradient(to right,#5e0cff,#9a01fb);
+            padding: 16px;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+    }
+    
+    .List{
+        background: linear-gradient(to right,#149fff,#117bff);
+        margin: 4px auto;
+        width: 70%;
+        box-sizing: content-box;
+        padding: 16px 32px;
+        border-radius: 5px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        div{
+            button{
+                width: 32px;
+                color: #fff;
+                height: 32px;
+                padding: 0;
+                background: none;
+                border: none;
+            }
+        }
+    }
+
+
+    .List:nth-child(4n){
+        background: linear-gradient(to right,#ff6813,#ff5411);
+    }
+    .List:nth-child(4n+1){
+        background: linear-gradient(to right,#5e0cff,#9a01fb);
+    }
+    .List:nth-child(4n+2){
+        background: linear-gradient(to right,#ff0cef,#fa0088)
+    }
+    .List:nth-child(4n+3){
+        background: linear-gradient(to right,#149fff,#117bff);
+    }
+}
