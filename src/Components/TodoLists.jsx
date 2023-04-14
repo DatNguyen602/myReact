@@ -23,13 +23,6 @@ const TodoLists = () => {
         }
     }
     
-    const Form = () => {
-        return <div className="btnIn">
-            <input ref={updateRef} type="text" className="BorderOfUpdate" placeholder="Add a todo" id="InputTodo" />
-            <button className= "ColorOfUpdate" onClick={handleUpDate}>Add Todo</button>
-        </div>
-    }
-
     const clickToUpdate = (index)=> {
         return () => {
             setPing(index);
@@ -42,14 +35,14 @@ const TodoLists = () => {
         }
         setPing(-1);
     }
-
+    
     useEffect (()=>{
         if (ping !== -1) {
             updateRef.current.value = List[ping];
             updateRef.current.focus();
         }
     },[ping])
-
+    
     const TodoList = () =>{
         return <React.Fragment>
             {List.map((value,index,array)=>{
@@ -63,6 +56,13 @@ const TodoLists = () => {
             })}
         </React.Fragment>
     }
+    
+    const Form = () => {
+        return <div className="btnIn">
+            <input ref={updateRef} type="text" className="BorderOfUpdate" placeholder="Add a todo" id="InputTodo" />
+            <button className= "ColorOfUpdate" onClick={handleUpDate}>Add Todo</button>
+        </div>
+    }
 
 
     return <div className="set-backG">
@@ -73,7 +73,6 @@ const TodoLists = () => {
                 <button  onClick={handleAddList}>Add Todo</button>
             </div>
             {ping === -1 ? <TodoList/> : <Form/>}
-            
         </div>
 
         
