@@ -74,8 +74,6 @@ const TodoLists = () => {
             </div>
             {ping === -1 ? <TodoList/> : <Form/>}
         </div>
-
-        
     </div>
 }
 
