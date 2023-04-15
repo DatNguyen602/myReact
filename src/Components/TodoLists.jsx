@@ -9,8 +9,10 @@ const TodoLists = () => {
     const handleAddList = () => {
         if(TodoRef.current.value !== ""){
             const todo = TodoRef.current.value;
-            setList([todo,...List]);
             TodoRef.current.value = "";
+            setList([todo,...List]);
+            console.log(TodoRef.current.value);
+            console.log(todo);
         }
     }
 
@@ -42,6 +44,11 @@ const TodoLists = () => {
             updateRef.current.focus();
         }
     },[ping])
+
+
+    const keyEnterUp = (k) => {
+        k.code === "Enter" && handleUpDate();
+    }
     
     const TodoList = () =>{
         return <React.Fragment>
@@ -63,7 +70,7 @@ const TodoLists = () => {
     
     const Form = () => {
         return <div className="btnIn">
-            <input ref={updateRef} type="text" className="BorderOfUpdate" placeholder="Add a todo" id="InputTodo" />
+            <input ref={updateRef} type="text" onKeyDown={keyEnterUp} className="BorderOfUpdate" placeholder="Add a todo" id="InputTodo" />
             <button className= "ColorOfUpdate" onClick={handleUpDate}>Add Todo</button>
         </div>
     }
