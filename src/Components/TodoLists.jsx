@@ -49,8 +49,12 @@ const TodoLists = () => {
             return <div key={Math.random()} className="List">
                     <p>{value}</p>
                         <div>
-                            <button onClick={handleDel(index,array)}><i className="fa-regular fa-trash"></i></button>
-                            <button onClick={clickToUpdate(index)}>V</button>
+                            <button onClick={handleDel(index,array)}>
+                                <img src="http://localhost:3000/Bai1/Del.png" alt="X"/>
+                            </button>
+                            <button onClick={clickToUpdate(index)}>
+                            <img src="http://localhost:3000/Bai1/Update.png" alt="V"/>
+                            </button>
                         </div>
                     </div>
             })}
