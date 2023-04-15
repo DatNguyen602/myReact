@@ -50,10 +50,10 @@ const TodoLists = () => {
                     <p>{value}</p>
                         <div>
                             <button onClick={handleDel(index,array)}>
-                                <img src="http://localhost:3000/Bai1/Del.png" alt="X"/>
+                                <img src="https://raw.githubusercontent.com/DatNguyen602/Bai1/code5/public/Del.png" alt="X"/>
                             </button>
                             <button onClick={clickToUpdate(index)}>
-                            <img src="http://localhost:3000/Bai1/Update.png" alt="V"/>
+                            <img src="https://raw.githubusercontent.com/DatNguyen602/Bai1/code5/public/Update.png" alt="V"/>
                             </button>
                         </div>
                     </div>
