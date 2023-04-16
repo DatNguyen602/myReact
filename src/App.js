@@ -1,13 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
-import HeaderBanner from './HeaderBanner';
-import Footer from './Footer';
+import TodoLists from "./Components/TodoLists.jsx"
 
 function App() {
   return (
     <div className="App">
-      <HeaderBanner/>
-      <Footer/>
+      <TodoLists/>
     </div>
   );
 }
