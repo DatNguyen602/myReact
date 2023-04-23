@@ -4,27 +4,30 @@ import React, { useState } from "react";
 
 const FormLogin = () => {
 
-    let check = -1;
+    const [check,setCheck] = useState(false);
 
     const [login , setLogin] = useState({
         email: "",
-        password: "",
+        password: ""
     });
 
     const ChangeLogin = (e) => {
         setLogin({
             ...login,
-            [e.target.name] : e.target.value,
+            [e.target.name] : e.target.value
         })
         console.log(login);
     }
 
-    const checkMail = (e) => {
+    const CheckMail = (e) => {
         // ^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4})*/$
         const regexEmail = /@.+?\.[a-zA-Z0-9]/i ;
-        check = login.email.search((regexEmail));
+        // check = login.email.search((regexEmail));
+        let temp = login.email.search((regexEmail))
+        setCheck(temp !== -1);
+        console.log(check);
         const logError = document.querySelector(".errorInputMail");
-        logError.innerHTML = check !== -1 ? "" : "Pleas check your email!";
+        logError.innerHTML = temp !== -1 ? "" : "Pleas check your email!" ;
         logError.innerHTML = login.email !== "" ? logError.innerHTML : "Email , it's empty!";
     }
 
@@ -35,7 +38,8 @@ const FormLogin = () => {
 
     const ClickLogin = (e) => {
         e.preventDefault();
-        if(check === -1){
+        console.log(check);
+        if(!check){
             document.querySelector("#email").focus();
             return;
         }
@@ -43,14 +47,14 @@ const FormLogin = () => {
             document.querySelector("#password").focus();
             return;
         }
-        axios.post("https://reqres.in/api/login",login)
+        console.log(login);
+        axios.post("https://reqres.in/api/login/",login)
             .then((response) => {
                 alert("Login is Success! " + response);
             })
             .catch((error) => {
-                alert("Login is Error! " + error)
+                alert("Login is Error! " + error);
             });
-            // alert("Login is Success! ");
     }
 
     const ClickSigin = (e) => {
@@ -59,7 +63,7 @@ const FormLogin = () => {
     }
 
     return <div className="formLogin">
-        <form onSubmit={checkMail}>
+        <form onSubmit={ClickLogin}>
             <h1>Form login</h1>
             <label htmlFor="email">
                 Email 
@@ -69,11 +73,12 @@ const FormLogin = () => {
             name="email"
             className="btn"
             onChange={ChangeLogin}
-            onBlur={checkMail}
+            onBlur={CheckMail}
             type="text"
             placeholder="Type your Email!"
             />
             <p className="errorInputMail styleError"></p>
+
             <label htmlFor="password">
                 Password 
             </label>
